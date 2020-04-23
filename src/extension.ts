@@ -26,6 +26,10 @@ function getPandocOptions(quickPickLabel) {
             pandocOptions = vscode.workspace.getConfiguration('pandoc').get('htmlOptString');
             console.log('pdocOptstring = ' + pandocOptions);
             break;
+        case 'xwiki':
+            pandocOptions = vscode.workspace.getConfiguration('pandoc').get('xwikiOptString');
+            console.log('pdocOptstring = ' + pandocOptions);
+            break;
     }
     
     return pandocOptions;
@@ -47,6 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
         items.push({ label: 'pdf',  description: 'Render as pdf document'  });
         items.push({ label: 'docx', description: 'Render as word document' });
         items.push({ label: 'html', description: 'Render as html document' });
+        items.push({ label: 'xwiki', description: 'Render as xwiki document' });
 
         vscode.window.showQuickPick(items).then((qpSelection) => {
             if (!qpSelection) {

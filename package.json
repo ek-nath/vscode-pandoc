@@ -47,6 +47,11 @@
             "type": "string",
             "default": "",
             "description": "pandoc .html output option template that you would like to use"
+          },
+          "pandoc.xwikiOptString": {
+            "type": "string",
+            "default": "",
+            "description": "pandoc .xwiki output option template that you would like to use"
           }
        }
      },
